@@ -9,8 +9,6 @@ jobs:
         with:
           distribution: temurin
           java-version: '17'
-      - run: yes | sdkmanager --licenses > /dev/null || true
-      - run: sdkmanager "platforms;android-34" "build-tools;34.0.0"
       - run: cd launcher && chmod +x gradlew && ./gradlew assembleRelease
       - uses: actions/upload-artifact@v4
         with:
